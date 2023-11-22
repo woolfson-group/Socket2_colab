@@ -1,0 +1,118 @@
+
+SOCKET: Originally Written by John Walshaw 1998-2001. University of Sussex, U.K.
+SOCKET 2.0: Updated by Prasun Kumar, 2021. University of Bristol, U.K.
+---------------------------------------------------------
+
+version 2.0
+
+The SOCKET 2.0 program identifies knobs-into-holes packing in protein structures
+(Walshaw & Woolfson, 2001).
+
+
+
+WHAT YOU NEED TO RUN SOCKET:
+----------------------------
+
+	1)	A PDB-format file to examine
+	2)	A DSSP-format file generated from the PDB file
+
+If you do not have the DSSP files for the PDB files you want to process, nor
+the DSSP program to generate them, then please use SOCKET 2.0 webserver at 
+http://coiledcoils.chm.bris.ac.uk/socket2/home.html.
+
+IMPORTANT: If you are using the recent version of DSSP, you must cut the 
+1-136 (both included) of DSSP output file for further use with SOCKET 2.0.  
+
+(See http://www.cmbi.kun.nl/gv/dssp/index.html for how to get DSSP;
+Kabsch & Sander, 1983)
+
+If you are stuck, there is a SOCKET-server accessible via the WWW at:
+
+http://coiledcoils.chm.bris.ac.uk/socket2/home.html
+
+- you can submit PDB files to this (no DSSP necessary).
+- you can also provide PDB 4 letter code
+
+
+
+COMPILING SOCKET:
+-----------------
+
+Type 'make' at the command prompt.
+
+(This is a pretty simple Makefile which ought to do the trick - let me know if
+it doesn't work on your system)
+
+
+
+RUNNING SOCKET:
+---------------
+
+(see also manual.txt)
+
+Usage:
+
+	socket2 -f <PDBfile> -s <DSSPfile> [ FLAGS ] [ PARAMETERS ]
+
+e.g.:
+	socket2 -f pdb2zta.ent -s 2zta.dssp -o 2zta.out
+
+Precede flags and parameter names immediately by '-'.
+Flags are specified on their own, e.g. -a
+Parameters specify values of integers, real numbers or strings (file names),
+Leave a space after the parameter name.
+
+e.g
+	-c 6.8
+	-r rasmolscript.txt
+
+Flags and parameters (including -f and -s) may be specified in any order.
+
+
+flags:
+	a	- use all atoms, not just heavy (ie include hydrogens if any),
+			for determining side chain centres-of-volume
+	i	- include C-alphas as part of a side chain
+	l	- list all the knob-hole interactions and knob complementarity
+			- and numerous other details
+	p	- 'private' output - names of input/output files are not
+			mentioned; used when running over WWW
+	q	- 'quiet' output
+	v	- verbose output - lists the helices, the helical residues
+		  and their centres of volume and ends; and many other details
+
+parameters:
+	c	- packing-cutoff (Ångstroms)
+	e	- helix extension (in residues); each helix is extended by e
+			residues at each end (if these residues exist)
+	f	- name of input PDB file (mandatory)
+	o	- name of the optional long output file, one residue per line
+	r	- name of the optional output RasMol script file
+	s	- name of the input DSSP file (mandatory)
+
+
+The basic results go to standard output.
+
+(See ftp://ftp.dcs.ed.ac.uk/pub/rasmol for how to get RasMol;
+Sayle & Milner-White, 1995)
+
+REFERENCES:
+-----------
+
+DSSP:	Kabsch, W. & Sander, C. (1983) Biopolymers 22 2577-2637
+RASMOL:	Sayle, R. & Milner-White E.J. (1995) Trends in Biochemical Sciences
+          20 (9) 374
+SOCKET:	Walshaw, J. & Woolfson, D.N. (2001) J. Mol. Biol. 307 (5) 1427-1450
+SOCKET 2.0: Kumar, P. & Woolfson, D.N. (2021) submitted
+
+
+
+
+ ____________________________________________________________________
+|                                                                    |
+| Prasun Kumar, School of Chemistry, University Bristol,             |
+| Dek Woolfson, School of Chemistry, University Bristol,             |
+| Bristol, BS8 1TS, U.K.                                             |
+| prasun.kumar@bristol.ac.uk,					     |
+| d.n.woolfson@bristol.ac.uk                                         |
+|____________________________________________________________________|
