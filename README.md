@@ -2,7 +2,7 @@
 
 Socket2 finds knobs-into-holes (KIH) packing between α-helices of protein structures (Crick, 1953; Walshaw and Woolfson, 2001). KIH packing is the structural hallmark of coiled-coil (CC) assemblies. Socket2 unambiguously defines the beginning and end of CC regions from the PDB-format structure files, and present these graphically and interactively. It also assigns heptad repeats and registers to the identified CCs, which are the sequence signatures of CC proteins (Lupas & Bassler, 2017).
 
-[Run Socket2 on Google Colab](https://colab.research.google.com/drive/1l0kRPu5-LGAvZNBDyF9RX1H2-tqm6NaI?usp=sharing)
+[Run Socket2 on Google Colab](https://colab.research.google.com/github/woolfson-group/Socket2_colab/blob/main/socket2_colab.ipynb)
 
 ## Running locally
 We provide executable for Linux users, for other systems please follow the instructions to compile Socket2.
