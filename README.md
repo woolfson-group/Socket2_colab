@@ -5,7 +5,7 @@ Socket2 finds knobs-into-holes (KIH) packing between α-helices of protein struc
 [Run Socket2 on Google Colab](https://colab.research.google.com/github/woolfson-group/Socket2_colab/blob/main/socket2_colab.ipynb)
 
 ## Running locally
-We provide an executable for Linux users, for other systems please follow the instructions to compile Socket2.
+We provide an executable for Linux users. For other systems, go to Socket2 and type 'make' at the command prompt.
 
 ## Please consider citing these articles if you use results from Socket2
 1. Kumar, P. & Woolfson, D.N. (2021) Bioinformatics, 2021 Dec 7;37(23):4575-4577
